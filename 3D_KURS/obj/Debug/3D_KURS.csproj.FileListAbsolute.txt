@@ -1,0 +1,36 @@
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe.config
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csprojResolveAssemblyReference.cache
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.ModelForm.resources
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.Properties.Resources.resources
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csproj.GenerateResource.Cache
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\bin\Debug\3D_KURS.pdb
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\3D_KURS.exe
+c:\users\tonya\documents\visual studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\3D_KURS.pdb
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe.config
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\3D_KURS.exe
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\3D_KURS.pdb
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\bin\Debug\3D_KURS.pdb
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csprojResolveAssemblyReference.cache
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.ModelForm.resources
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.Properties.Resources.resources
+C:\Users\Сойкина Антонина\Documents\Visual Studio 2012\Projects\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csproj.GenerateResource.Cache
+D:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe.config
+D:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.exe
+D:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.pdb
+D:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe
+D:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.pdb
+D:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csprojResolveAssemblyReference.cache
+D:\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.ModelForm.resources
+D:\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.Properties.Resources.resources
+D:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csproj.GenerateResource.Cache
+F:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe.config
+F:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.exe
+F:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.pdb
+F:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csprojResolveAssemblyReference.cache
+F:\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.ModelForm.resources
+F:\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.Properties.Resources.resources
+F:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csproj.GenerateResource.Cache
+F:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe
+F:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.pdb
