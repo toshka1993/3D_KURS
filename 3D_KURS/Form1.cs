@@ -17,10 +17,10 @@ namespace _3D_KURS
             InitializeComponent();
         }
 
-        Graphics gr;
-        List<Figure> ObjList;
+        Graphics gr;                                                    // графическая переменная
+        List<Figure> ObjList;                                           // список фигур
 
-        private void create_model()
+        private void create_model()                                     // метод построения модели
         {
 
             Parallelepiped Par;
@@ -31,7 +31,7 @@ namespace _3D_KURS
             int cylA;
             Point3 pOrigin;
 
-            ObjList = new List<Figure>();
+            ObjList = new List<Figure>();                               // список фигур
 
             // параметры параллелепипеда
             parL = float.Parse(tbParL.Text);
@@ -47,17 +47,17 @@ namespace _3D_KURS
             Zero = new PointF((float)(pDraw.Size.Width / 2 - parL / 2),
                (float)(pDraw.Size.Height / 2 + parH / 2));
 
-            gr = pDraw.CreateGraphics();
+            gr = pDraw.CreateGraphics();                // графическая панель
 
             clear_panel();
 
-            Projection proj = create_proj(cbProj.SelectedIndex);
+            Projection proj = create_proj(cbProj.SelectedIndex);                // метод получения объекта нужной проекции (в зависимости от выбранной)
 
-            Par = new Parallelepiped(parL, parW, parH, gr, Zero, proj);
-            ObjList.Add(Par);
+            Par = new Parallelepiped(parL, parW, parH, gr, Zero, proj);         // создание параллелепипеда
+            ObjList.Add(Par);                                                   // добавление объекта в список фигур
 
-            Cyl = new Cylinder(cylR, cylH, cylA, pOrigin, gr, Zero, proj);
-            ObjList.Add(Cyl);
+            Cyl = new Cylinder(cylR, cylH, cylA, pOrigin, gr, Zero, proj);      // создание цилиндра
+            ObjList.Add(Cyl);                                                   // добавление объекта в список фигур
         }
 
         private Projection create_proj(int i)
@@ -83,6 +83,7 @@ namespace _3D_KURS
                     proj = new Axonometric(float.Parse(tbAksFi.Text), float.Parse(tbAksPsi.Text));
                     break;
                 case 4:
+                    // косоугольная
                     proj = new Oblique(float.Parse(tbOblL.Text), float.Parse(tbOblAlfa.Text));
                     break;
                 case 5:
@@ -96,11 +97,13 @@ namespace _3D_KURS
         private void butDrawModel_Click(object sender, EventArgs e)
         {
             create_model();
-           
 
+            grMove.Enabled = true;
+            grScale.Enabled = true;
+            grRotate.Enabled = true;
         }
 
-        private void butRotate_Click(object sender, EventArgs e)
+        private void butRotate_Click(object sender, EventArgs e)     // поворот
         {
             clear_panel();
 
@@ -111,17 +114,19 @@ namespace _3D_KURS
 
         }
 
-        private void butMove_Click(object sender, EventArgs e)
+        private void butMove_Click(object sender, EventArgs e)   // перемещение
         {
             clear_panel();
+
             for (int i = 0; i < ObjList.Count; i++)
             {
                 Move move = new Move(ObjList[i], int.Parse(tbMoveX.Text), int.Parse(tbMoveY.Text), int.Parse(tbMoveZ.Text));
             }
         }
 
-        private void butScale_Click(object sender, EventArgs e)
+        private void butScale_Click(object sender, EventArgs e)  // масштабирование
         {
+            clear_panel();
 
             for (int i = 0; i < ObjList.Count; i++)
             {
@@ -130,47 +135,45 @@ namespace _3D_KURS
         }
 
 
-        private void clear_panel()
+        private void clear_panel()              // очистка панели
         {
             Color col = Color.White;
             gr.Clear(col);
-        }
 
-        private void butDrawProj_Click(object sender, EventArgs e)
-        {
-            
+       //     gr.DrawLine(new Pen(Color.Red, 1), pDraw.Size.Width / 2, 0, pDraw.Size.Width / 2, pDraw.Size.Height);
+       //     gr.DrawLine(new Pen(Color.Red, 1), 0, pDraw.Size.Height / 2, pDraw.Size.Width, pDraw.Size.Height / 2);
         }
 
         private void cbProj_SelectedIndexChanged(object sender, EventArgs e)
         {
             switch (cbProj.SelectedIndex)
             {
-                case 0:
+                case 0:  //выбрана фронтальная проекция -> скрыть все параметры проекций
                     grAks.Hide();
                     grObl.Hide();
                     grPer.Hide();
                     break;
-                case 1:
+                case 1:  //выбрана горизонтальная проекция -> скрыть все параметры проекций
                     grAks.Hide();
                     grObl.Hide();
                     grPer.Hide();
                     break;
-                case 2:
+                case 2:  //выбрана профильная проекция -> скрыть все параметры проекций
                     grAks.Hide();
                     grObl.Hide();
                     grPer.Hide();
                     break;
-                case 3:
+                case 3:  //выбрана аксонометрическая проекция -> показать для данной проекции параметры
                     grAks.Show();
                     grObl.Hide();
                     grPer.Hide();
                     break;
-                case 4:
+                case 4: //выбрана косоугольная проекция -> показать для данной проекции параметры
                     grAks.Hide();
                     grObl.Show();
                     grPer.Hide();
                     break;
-                case 5:
+                case 5: //выбрана перспективная проекция -> показать для данной проекции параметры
                     grAks.Hide();
                     grObl.Hide();
                     grPer.Show();

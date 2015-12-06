@@ -75,11 +75,6 @@
             this.tbAksFi = new System.Windows.Forms.TextBox();
             this.lab_AksFi = new System.Windows.Forms.Label();
             this.grPer = new System.Windows.Forms.GroupBox();
-            this.grObl = new System.Windows.Forms.GroupBox();
-            this.tbOblAlfa = new System.Windows.Forms.TextBox();
-            this.lab_OblAlfa = new System.Windows.Forms.Label();
-            this.tbOblL = new System.Windows.Forms.TextBox();
-            this.lab_OblL = new System.Windows.Forms.Label();
             this.tbPerRo = new System.Windows.Forms.TextBox();
             this.lab_PerRo = new System.Windows.Forms.Label();
             this.tbPerTetta = new System.Windows.Forms.TextBox();
@@ -88,6 +83,11 @@
             this.lab_PerFi = new System.Windows.Forms.Label();
             this.tbPerD = new System.Windows.Forms.TextBox();
             this.lab_PerD = new System.Windows.Forms.Label();
+            this.grObl = new System.Windows.Forms.GroupBox();
+            this.tbOblAlfa = new System.Windows.Forms.TextBox();
+            this.lab_OblAlfa = new System.Windows.Forms.Label();
+            this.tbOblL = new System.Windows.Forms.TextBox();
+            this.lab_OblL = new System.Windows.Forms.Label();
             this.cbProj = new System.Windows.Forms.ComboBox();
             this.grPar.SuspendLayout();
             this.grCyl.SuspendLayout();
@@ -277,6 +277,7 @@
             this.grRotate.Controls.Add(this.lab_RotZ);
             this.grRotate.Controls.Add(this.lab_RotY);
             this.grRotate.Controls.Add(this.lab_RotX);
+            this.grRotate.Enabled = false;
             this.grRotate.Location = new System.Drawing.Point(13, 379);
             this.grRotate.Name = "grRotate";
             this.grRotate.Size = new System.Drawing.Size(148, 94);
@@ -354,6 +355,7 @@
             this.grMove.Controls.Add(this.lab_MoveZ);
             this.grMove.Controls.Add(this.lab_MoveY);
             this.grMove.Controls.Add(this.lab_MoveX);
+            this.grMove.Enabled = false;
             this.grMove.Location = new System.Drawing.Point(14, 479);
             this.grMove.Name = "grMove";
             this.grMove.Size = new System.Drawing.Size(148, 94);
@@ -431,6 +433,7 @@
             this.grScale.Controls.Add(this.lab_ScaleZ);
             this.grScale.Controls.Add(this.lab_ScaleY);
             this.grScale.Controls.Add(this.lab_ScaleX);
+            this.grScale.Enabled = false;
             this.grScale.Location = new System.Drawing.Point(14, 579);
             this.grScale.Name = "grScale";
             this.grScale.Size = new System.Drawing.Size(148, 94);
@@ -637,53 +640,6 @@
             this.grPer.TabStop = false;
             this.grPer.Visible = false;
             // 
-            // grObl
-            // 
-            this.grObl.Controls.Add(this.tbOblAlfa);
-            this.grObl.Controls.Add(this.lab_OblAlfa);
-            this.grObl.Controls.Add(this.tbOblL);
-            this.grObl.Controls.Add(this.lab_OblL);
-            this.grObl.Location = new System.Drawing.Point(8, 46);
-            this.grObl.Name = "grObl";
-            this.grObl.Size = new System.Drawing.Size(144, 56);
-            this.grObl.TabIndex = 8;
-            this.grObl.TabStop = false;
-            this.grObl.Visible = false;
-            // 
-            // tbOblAlfa
-            // 
-            this.tbOblAlfa.Location = new System.Drawing.Point(95, 18);
-            this.tbOblAlfa.Name = "tbOblAlfa";
-            this.tbOblAlfa.Size = new System.Drawing.Size(43, 20);
-            this.tbOblAlfa.TabIndex = 7;
-            this.tbOblAlfa.Text = "60";
-            // 
-            // lab_OblAlfa
-            // 
-            this.lab_OblAlfa.AutoSize = true;
-            this.lab_OblAlfa.Location = new System.Drawing.Point(74, 21);
-            this.lab_OblAlfa.Name = "lab_OblAlfa";
-            this.lab_OblAlfa.Size = new System.Drawing.Size(14, 13);
-            this.lab_OblAlfa.TabIndex = 6;
-            this.lab_OblAlfa.Text = "α";
-            // 
-            // tbOblL
-            // 
-            this.tbOblL.Location = new System.Drawing.Point(25, 18);
-            this.tbOblL.Name = "tbOblL";
-            this.tbOblL.Size = new System.Drawing.Size(43, 20);
-            this.tbOblL.TabIndex = 5;
-            this.tbOblL.Text = "0,5";
-            // 
-            // lab_OblL
-            // 
-            this.lab_OblL.AutoSize = true;
-            this.lab_OblL.Location = new System.Drawing.Point(4, 21);
-            this.lab_OblL.Name = "lab_OblL";
-            this.lab_OblL.Size = new System.Drawing.Size(13, 13);
-            this.lab_OblL.TabIndex = 4;
-            this.lab_OblL.Text = "L";
-            // 
             // tbPerRo
             // 
             this.tbPerRo.Location = new System.Drawing.Point(91, 36);
@@ -751,6 +707,53 @@
             this.lab_PerD.Size = new System.Drawing.Size(13, 13);
             this.lab_PerD.TabIndex = 4;
             this.lab_PerD.Text = "d";
+            // 
+            // grObl
+            // 
+            this.grObl.Controls.Add(this.tbOblAlfa);
+            this.grObl.Controls.Add(this.lab_OblAlfa);
+            this.grObl.Controls.Add(this.tbOblL);
+            this.grObl.Controls.Add(this.lab_OblL);
+            this.grObl.Location = new System.Drawing.Point(8, 46);
+            this.grObl.Name = "grObl";
+            this.grObl.Size = new System.Drawing.Size(144, 56);
+            this.grObl.TabIndex = 8;
+            this.grObl.TabStop = false;
+            this.grObl.Visible = false;
+            // 
+            // tbOblAlfa
+            // 
+            this.tbOblAlfa.Location = new System.Drawing.Point(95, 18);
+            this.tbOblAlfa.Name = "tbOblAlfa";
+            this.tbOblAlfa.Size = new System.Drawing.Size(43, 20);
+            this.tbOblAlfa.TabIndex = 7;
+            this.tbOblAlfa.Text = "60";
+            // 
+            // lab_OblAlfa
+            // 
+            this.lab_OblAlfa.AutoSize = true;
+            this.lab_OblAlfa.Location = new System.Drawing.Point(74, 21);
+            this.lab_OblAlfa.Name = "lab_OblAlfa";
+            this.lab_OblAlfa.Size = new System.Drawing.Size(14, 13);
+            this.lab_OblAlfa.TabIndex = 6;
+            this.lab_OblAlfa.Text = "α";
+            // 
+            // tbOblL
+            // 
+            this.tbOblL.Location = new System.Drawing.Point(25, 18);
+            this.tbOblL.Name = "tbOblL";
+            this.tbOblL.Size = new System.Drawing.Size(43, 20);
+            this.tbOblL.TabIndex = 5;
+            this.tbOblL.Text = "0,5";
+            // 
+            // lab_OblL
+            // 
+            this.lab_OblL.AutoSize = true;
+            this.lab_OblL.Location = new System.Drawing.Point(4, 21);
+            this.lab_OblL.Name = "lab_OblL";
+            this.lab_OblL.Size = new System.Drawing.Size(13, 13);
+            this.lab_OblL.TabIndex = 4;
+            this.lab_OblL.Text = "L";
             // 
             // cbProj
             // 

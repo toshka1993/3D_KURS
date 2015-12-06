@@ -9,8 +9,8 @@ namespace _3D_KURS
 {
     class Cylinder : Figure
     {
-        private float R, H;
-        private int A;
+        private float R, H;             //радиус и высота
+        private int A;                  //значение апроксимации
         private Point3 pOrigin;
 
         public Cylinder(float inR, float inH, int inA, Point3 inpOrigin, Graphics inGr, PointF inZero, Projection inProj)
@@ -33,7 +33,7 @@ namespace _3D_KURS
 
         }
         
-        protected override void SetPoints() 
+        protected override void SetPoints()                 // фунцкция задает точки цилиндра
         {
             var angle = Math.PI * 2 / A;
 
@@ -67,7 +67,7 @@ namespace _3D_KURS
             pointsProj = points;
         }
 
-        protected override void SetEdges()
+        protected override void SetEdges()                  // фунцкция задает ребра цилиндра
         {
             for (int i = 0; i < A - 1; i++)
             {
@@ -89,7 +89,7 @@ namespace _3D_KURS
             }
         }
 
-        protected override void SetFacets()
+        protected override void SetFacets()                         // фунцкция задает грани цилиндра
         {
             for (int i = 0; i < facets.Length; i++)
                 facets[i] = new Facet();

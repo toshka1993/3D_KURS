@@ -23,7 +23,7 @@ namespace _3D_KURS
         {
             Point3[] outMas = new Point3[points.Length];
 
-            Matrix R = new Matrix(4, 4);
+            Matrix R = new Matrix(4, 4);            // матрица проекции
             /*R[0, 0] = -Math.Sin(tetta); R[0, 1] = -Math.Cos(fi) * Math.Cos(tetta); R[0, 2] = -Math.Sin(fi) * Math.Cos(tetta); R[0, 3] = 0;
             R[1, 0] = Math.Cos(tetta); R[1, 1] = -Math.Cos(fi) * Math.Sin(tetta); R[1, 2] = -Math.Sin(fi) * Math.Sin(tetta); R[1, 3] = 0;
             R[2, 0] = 0; R[2, 1] = Math.Sin(fi); R[2, 2] = -Math.Cos(fi); R[2, 3] = 0;

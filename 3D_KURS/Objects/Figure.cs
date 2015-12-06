@@ -17,7 +17,7 @@ namespace _3D_KURS
         protected Facet[] facets;             // грани фигуры
         protected Projection proj;            //проекция
 
-        private Graphics gr;
+        private Graphics gr;                 // переменная графической панели
         private PointF Zero;                 //начало координат
 
         public Figure(Graphics inGr, PointF inZero)
@@ -26,14 +26,17 @@ namespace _3D_KURS
             Zero = inZero;
         }
 
-        abstract protected void SetPoints();
+        // функции абстрактные, т.к. для каждой фигуры они реализуются по-разному и их выполнение реализовано 
+        // в наследуемых классах, т.е. в классах конкретных фигур (цилиндра и параллелепипеда
 
-        abstract protected void SetEdges();
+        abstract protected void SetPoints();         // задание точек фигуры
 
-        abstract protected void SetFacets();
+        abstract protected void SetEdges();          // задание ребер фигуры
+
+        abstract protected void SetFacets();         // задание граней фигуры
 
 
-        public void DrawFigure() 
+        public void DrawFigure()                    // отрисовка фигуры по граням
         {
             foreach (Facet fat in facets)
             {
@@ -46,9 +49,9 @@ namespace _3D_KURS
                 gr.DrawPolygon(new Pen(Color.Black, 1), lP.ToArray());
             }
         }
-        public void UpdateFigure()
+        public void UpdateFigure()              // обновление фигуры
         {
-            pointsProj = proj.CreateProjection(points);
+            pointsProj = proj.CreateProjection(points);     // получение точек проекции фигуры
 
             SetEdges();
             SetFacets();

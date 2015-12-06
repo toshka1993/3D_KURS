@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace _3D_KURS
 {
+    // класс поворота фигуры
     class Rotate
     {
         public Point3[] points;
@@ -18,14 +19,13 @@ namespace _3D_KURS
             angleY = inAnY;
             angleZ = inAnZ;
 
-            points = RotateX();
-            points = RotateY();
-            points = RotateZ();
+            points = RotateX();         // поворот относительно оси X
+            points = RotateY();         // поворот относительно оси Y
+            points = RotateZ();         // поворот относительно оси Z
 
             obj.points = points;
 
             obj.UpdateFigure();
-            obj.DrawFigure();
         }
 
         private Point3[] RotateX()
@@ -33,7 +33,7 @@ namespace _3D_KURS
             Point3[] outMas = new Point3[points.Length];
 
             double radians = Math.PI * angleX / 180;
-            Matrix R = new Matrix(4, 4);
+            Matrix R = new Matrix(4, 4);                // матрица поворота относительно оси X
             R[0, 0] = 1;
             R[0, 1] = 0;
             R[0, 2] = 0;
@@ -70,7 +70,7 @@ namespace _3D_KURS
             Point3[] outMas = new Point3[points.Length];
 
             double radians = Math.PI * angleY / 180;
-            Matrix R = new Matrix(4, 4);
+            Matrix R = new Matrix(4, 4);                                // матрица поворота относительно оси Y
             R[0, 0] = (float)Math.Cos(radians);
             R[0, 1] = 0;
             R[0, 2] = (float)-Math.Sin(radians);
@@ -106,7 +106,7 @@ namespace _3D_KURS
             Point3[] outMas = new Point3[points.Length];
 
             double radians = Math.PI * angleZ / 180;
-            Matrix R = new Matrix(4, 4);
+            Matrix R = new Matrix(4, 4);                               // матрица поворота относительно оси Z
             R[0, 0] = (float)Math.Cos(radians);
             R[0, 1] = (float)Math.Sin(radians);
             R[0, 2] = 0;

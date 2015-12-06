@@ -29,8 +29,8 @@ namespace _3D_KURS
             UpdateFigure();
 
         }
-        
-        protected override void SetPoints()
+
+        protected override void SetPoints()                     // фунцкция задает точки параллелепипеда
         {
             points[0] = new Point3(0, 0, 0);
             points[1] = new Point3(0, H, 0);
@@ -45,7 +45,7 @@ namespace _3D_KURS
             pointsProj = points;
         }
 
-        protected override void SetEdges()
+        protected override void SetEdges()                          // фунцкция задает ребра параллелепипеда
         {
             edges[0] = new Edge(pointsProj[0], pointsProj[1]);
             edges[1] = new Edge(pointsProj[1], pointsProj[2]);
@@ -61,7 +61,7 @@ namespace _3D_KURS
             edges[11] = new Edge(pointsProj[3], pointsProj[7]);
         }
 
-        protected override void SetFacets()
+        protected override void SetFacets()                                 // фунцкция задает грани параллелепипеда
         {
             for (int i = 0; i < facets.Length; i++)
                 facets[i] = new Facet();
