@@ -22,7 +22,6 @@ namespace _3D_KURS
             points = ScaleObj();
 
             obj.points = points;
-
             obj.UpdateFigure();
         }
         private Point3[] ScaleObj()

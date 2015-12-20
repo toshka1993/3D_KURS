@@ -24,7 +24,6 @@ namespace _3D_KURS
             points = RotateZ();         // поворот относительно оси Z
 
             obj.points = points;
-
             obj.UpdateFigure();
         }
 

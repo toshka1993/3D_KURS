@@ -22,10 +22,10 @@ namespace _3D_KURS
             Point3[] outMas = new Point3[points.Length];
 
             Matrix R = new Matrix(4, 4);                    // матрица проекции
-            R[0, 0] = (float)Math.Cos(psi); R[0, 1] = (float)Math.Sin(fi) * (float)Math.Sin(psi); R[0, 2] = 0; R[0, 3] = 0;
-            R[1, 0] = 0; R[1, 1] = (float)Math.Cos(fi); R[1, 2] = 0; R[1, 3] = 0;
-            R[2, 0] = (float)Math.Sin(psi); R[2, 1] = -1 * (float)Math.Sin(fi) * (float)Math.Cos(psi); R[2, 2] = 0; R[2, 3] = 0;
-            R[3, 0] = 0; R[3, 1] = 0; R[3, 2] = 0; R[3, 3] = 1;
+            R[0, 0] = (float)Math.Cos(psi); R[0, 1] = (float)Math.Sin(fi) * (float)Math.Sin(psi);       R[0, 2] = 0; R[0, 3] = 0;
+            R[1, 0] = 0;                    R[1, 1] = (float)Math.Cos(fi);                              R[1, 2] = 0; R[1, 3] = 0;
+            R[2, 0] = (float)Math.Sin(psi); R[2, 1] = -1 * (float)Math.Sin(fi) * (float)Math.Cos(psi);  R[2, 2] = 1; R[2, 3] = 0;
+            R[3, 0] = 0;                    R[3, 1] = 0;                                                R[3, 2] = 0; R[3, 3] = 1;
 
             for (int i = 0; i < points.Length; i++)
             {

@@ -29,7 +29,7 @@ namespace _3D_KURS
             pOrigin = inpOrigin;                 // точка начала построения цилиндра       
 
             SetPoints();
-            UpdateFigure();
+            GetFigure();
 
         }
         
@@ -64,28 +64,28 @@ namespace _3D_KURS
                 points[i + A] = new Point3(bufPoint[i].X, pOrigin.Y + H, bufPoint[i].Y - pOrigin.Z - H);
             }
 
-            pointsProj = points;
+      //      points = points;
         }
 
         protected override void SetEdges()                  // фунцкция задает ребра цилиндра
         {
             for (int i = 0; i < A - 1; i++)
             {
-                edges[i] = new Edge(pointsProj[i], pointsProj[i + 1]);                         //
+                edges[i] = new Edge(points[i], points[i + 1]);                         //
             }
 
-            edges[A - 1] = new Edge(pointsProj[A - 1], pointsProj[0]);                         // нижнее основание
+            edges[A - 1] = new Edge(points[A - 1], points[0]);                         // нижнее основание
 
             for (int i = A; i < A * 2 - 1; i++)
             {
-                edges[i] = new Edge(pointsProj[i], pointsProj[i + 1]);                         //
+                edges[i] = new Edge(points[i], points[i + 1]);                         //
             }
 
-            edges[A * 2 - 1] = new Edge(pointsProj[A * 2 - 1], pointsProj[A]);                 // верхнее основание
+            edges[A * 2 - 1] = new Edge(points[A * 2 - 1], points[A]);                 // верхнее основание
 
             for (int i = A * 2; i < A * 3; i++)
             {
-                edges[i] = new Edge(pointsProj[i - A], pointsProj[i - A * 2]);                   // основания между собой
+                edges[i] = new Edge(points[i - A], points[i - A * 2]);                   // основания между собой
             }
         }
 
@@ -95,30 +95,48 @@ namespace _3D_KURS
                 facets[i] = new Facet();
 
             for (int i = 0; i < facets.Length; i++)
+            {
                 facets[i].Points.Clear();
+                facets[i].avZ = 0;
+            }
 
             for (int i = 0; i < A; i++)
             {
-                facets[0].Points.Add(pointsProj[i]); // нижнее основание
+                facets[0].Points.Add(points[i]); // нижнее основание
+                facets[0].avZ += points[i].Z;
             }
+
+            facets[0].avZ = facets[0].avZ / A;
 
             for (int i = A; i < A*2; i++)
             {
-                facets[1].Points.Add(pointsProj[i]); // верхнее основание
+                facets[1].Points.Add(points[i]); // верхнее основание
+                facets[1].avZ += points[i].Z;
             }
+            facets[1].avZ = facets[1].avZ / A;
 
             for (int i = 2; i < facets.Length - 1; i++)
             {
-                facets[i].Points.Add(pointsProj[i - 2]);
-                facets[i].Points.Add(pointsProj[A + i - 2]);
-                facets[i].Points.Add(pointsProj[A + i + 1 - 2]);
-                facets[i].Points.Add(pointsProj[i - 1]);
+                facets[i].Points.Add(points[i - 2]);
+                facets[i].Points.Add(points[A + i - 2]);
+                facets[i].Points.Add(points[A + i + 1 - 2]);
+                facets[i].Points.Add(points[i - 1]);
+
+                facets[i].avZ = (points[i - 2].Z + points[A + i - 2].Z + points[A + i + 1 - 2].Z + points[i - 1].Z) / 4;
             }
 
-            facets[facets.Length - 1].Points.Add(pointsProj[A - 1]);
-            facets[facets.Length - 1].Points.Add(pointsProj[points.Length - 1]);
-            facets[facets.Length - 1].Points.Add(pointsProj[A]);
-            facets[facets.Length - 1].Points.Add(pointsProj[0]);
+            facets[facets.Length - 1].Points.Add(points[A - 1]);
+            facets[facets.Length - 1].Points.Add(points[points.Length - 1]);
+            facets[facets.Length - 1].Points.Add(points[A]);
+            facets[facets.Length - 1].Points.Add(points[0]);
+
+            facets[facets.Length - 1].avZ = (points[A - 1].Z + points[points.Length - 1].Z + points[A].Z + points[0].Z) / 4;
+
+            for (int i = 0; i < facets.Length; i++)
+            {
+                facets[i].color = Color.Salmon;
+                facets[i].colorFill = Color.Salmon;
+            }
         }
     }
 }

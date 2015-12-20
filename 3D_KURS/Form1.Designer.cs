@@ -89,6 +89,17 @@
             this.tbOblL = new System.Windows.Forms.TextBox();
             this.lab_OblL = new System.Windows.Forms.Label();
             this.cbProj = new System.Windows.Forms.ComboBox();
+            this.isFill = new System.Windows.Forms.CheckBox();
+            this.cbLight = new System.Windows.Forms.CheckBox();
+            this.grLight = new System.Windows.Forms.GroupBox();
+            this.butLight = new System.Windows.Forms.Button();
+            this.tbLightX = new System.Windows.Forms.TextBox();
+            this.tbLightZ = new System.Windows.Forms.TextBox();
+            this.lab_LightY = new System.Windows.Forms.Label();
+            this.lab_LightZ = new System.Windows.Forms.Label();
+            this.tbLightY = new System.Windows.Forms.TextBox();
+            this.lab_LightX = new System.Windows.Forms.Label();
+            this.isColor = new System.Windows.Forms.CheckBox();
             this.grPar.SuspendLayout();
             this.grCyl.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.tbCylA)).BeginInit();
@@ -102,6 +113,7 @@
             this.grAks.SuspendLayout();
             this.grPer.SuspendLayout();
             this.grObl.SuspendLayout();
+            this.grLight.SuspendLayout();
             this.SuspendLayout();
             // 
             // grPar
@@ -772,12 +784,128 @@
             this.cbProj.Text = "Фронтальная";
             this.cbProj.SelectedIndexChanged += new System.EventHandler(this.cbProj_SelectedIndexChanged);
             // 
+            // isFill
+            // 
+            this.isFill.AutoSize = true;
+            this.isFill.Location = new System.Drawing.Point(929, 12);
+            this.isFill.Name = "isFill";
+            this.isFill.Size = new System.Drawing.Size(163, 17);
+            this.isFill.TabIndex = 10;
+            this.isFill.Text = "Удалить невидимые линии";
+            this.isFill.UseVisualStyleBackColor = true;
+            this.isFill.CheckedChanged += new System.EventHandler(this.isFill_CheckedChanged);
+            // 
+            // cbLight
+            // 
+            this.cbLight.AutoSize = true;
+            this.cbLight.Enabled = false;
+            this.cbLight.Location = new System.Drawing.Point(929, 58);
+            this.cbLight.Name = "cbLight";
+            this.cbLight.Size = new System.Drawing.Size(85, 17);
+            this.cbLight.TabIndex = 13;
+            this.cbLight.Text = "Освещение";
+            this.cbLight.UseVisualStyleBackColor = true;
+            this.cbLight.CheckedChanged += new System.EventHandler(this.cbLight_CheckedChanged);
+            // 
+            // grLight
+            // 
+            this.grLight.Controls.Add(this.butLight);
+            this.grLight.Controls.Add(this.tbLightX);
+            this.grLight.Controls.Add(this.tbLightZ);
+            this.grLight.Controls.Add(this.lab_LightY);
+            this.grLight.Controls.Add(this.lab_LightZ);
+            this.grLight.Controls.Add(this.tbLightY);
+            this.grLight.Controls.Add(this.lab_LightX);
+            this.grLight.Location = new System.Drawing.Point(929, 81);
+            this.grLight.Name = "grLight";
+            this.grLight.Size = new System.Drawing.Size(178, 85);
+            this.grLight.TabIndex = 12;
+            this.grLight.TabStop = false;
+            this.grLight.Text = "Источник света";
+            this.grLight.Visible = false;
+            // 
+            // butLight
+            // 
+            this.butLight.Location = new System.Drawing.Point(98, 50);
+            this.butLight.Name = "butLight";
+            this.butLight.Size = new System.Drawing.Size(56, 22);
+            this.butLight.TabIndex = 8;
+            this.butLight.Text = "OK";
+            this.butLight.UseVisualStyleBackColor = true;
+            // 
+            // tbLightX
+            // 
+            this.tbLightX.Location = new System.Drawing.Point(41, 24);
+            this.tbLightX.Name = "tbLightX";
+            this.tbLightX.Size = new System.Drawing.Size(43, 20);
+            this.tbLightX.TabIndex = 10;
+            this.tbLightX.Text = "0";
+            // 
+            // tbLightZ
+            // 
+            this.tbLightZ.Location = new System.Drawing.Point(41, 50);
+            this.tbLightZ.Name = "tbLightZ";
+            this.tbLightZ.Size = new System.Drawing.Size(43, 20);
+            this.tbLightZ.TabIndex = 12;
+            this.tbLightZ.Text = "-1000";
+            // 
+            // lab_LightY
+            // 
+            this.lab_LightY.AutoSize = true;
+            this.lab_LightY.Location = new System.Drawing.Point(95, 29);
+            this.lab_LightY.Name = "lab_LightY";
+            this.lab_LightY.Size = new System.Drawing.Size(14, 13);
+            this.lab_LightY.TabIndex = 4;
+            this.lab_LightY.Text = "Y";
+            // 
+            // lab_LightZ
+            // 
+            this.lab_LightZ.AutoSize = true;
+            this.lab_LightZ.Location = new System.Drawing.Point(25, 54);
+            this.lab_LightZ.Name = "lab_LightZ";
+            this.lab_LightZ.Size = new System.Drawing.Size(14, 13);
+            this.lab_LightZ.TabIndex = 11;
+            this.lab_LightZ.Text = "Z";
+            // 
+            // tbLightY
+            // 
+            this.tbLightY.Location = new System.Drawing.Point(111, 24);
+            this.tbLightY.Name = "tbLightY";
+            this.tbLightY.Size = new System.Drawing.Size(43, 20);
+            this.tbLightY.TabIndex = 5;
+            this.tbLightY.Text = "0";
+            // 
+            // lab_LightX
+            // 
+            this.lab_LightX.AutoSize = true;
+            this.lab_LightX.Location = new System.Drawing.Point(25, 28);
+            this.lab_LightX.Name = "lab_LightX";
+            this.lab_LightX.Size = new System.Drawing.Size(14, 13);
+            this.lab_LightX.TabIndex = 9;
+            this.lab_LightX.Text = "X";
+            // 
+            // isColor
+            // 
+            this.isColor.AutoSize = true;
+            this.isColor.Enabled = false;
+            this.isColor.Location = new System.Drawing.Point(929, 35);
+            this.isColor.Name = "isColor";
+            this.isColor.Size = new System.Drawing.Size(75, 17);
+            this.isColor.TabIndex = 11;
+            this.isColor.Text = "Закраска";
+            this.isColor.UseVisualStyleBackColor = true;
+            this.isColor.CheckedChanged += new System.EventHandler(this.isColor_CheckedChanged);
+            // 
             // ModelForm
             // 
             this.AllowDrop = true;
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(927, 691);
+            this.ClientSize = new System.Drawing.Size(1118, 691);
+            this.Controls.Add(this.cbLight);
+            this.Controls.Add(this.grLight);
+            this.Controls.Add(this.isColor);
+            this.Controls.Add(this.isFill);
             this.Controls.Add(this.grProj);
             this.Controls.Add(this.grScale);
             this.Controls.Add(this.grMove);
@@ -808,7 +936,10 @@
             this.grPer.PerformLayout();
             this.grObl.ResumeLayout(false);
             this.grObl.PerformLayout();
+            this.grLight.ResumeLayout(false);
+            this.grLight.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -875,6 +1006,17 @@
         private System.Windows.Forms.TextBox tbPerD;
         private System.Windows.Forms.Label lab_PerD;
         private System.Windows.Forms.ComboBox cbProj;
+        private System.Windows.Forms.CheckBox isFill;
+        private System.Windows.Forms.CheckBox cbLight;
+        private System.Windows.Forms.GroupBox grLight;
+        private System.Windows.Forms.Button butLight;
+        private System.Windows.Forms.TextBox tbLightX;
+        private System.Windows.Forms.TextBox tbLightZ;
+        private System.Windows.Forms.Label lab_LightY;
+        private System.Windows.Forms.Label lab_LightZ;
+        private System.Windows.Forms.TextBox tbLightY;
+        private System.Windows.Forms.Label lab_LightX;
+        private System.Windows.Forms.CheckBox isColor;
     }
 }
 

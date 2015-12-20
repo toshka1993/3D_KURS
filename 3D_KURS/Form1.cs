@@ -18,6 +18,7 @@ namespace _3D_KURS
         }
 
         Graphics gr;                                                    // графическая переменная
+        PointF Zero;
         List<Figure> ObjList;                                           // список фигур
 
         private void create_model()                                     // метод построения модели
@@ -26,7 +27,6 @@ namespace _3D_KURS
             Parallelepiped Par;
             Cylinder Cyl;
             float parL, parW, parH;
-            PointF Zero;
             float cylR, cylH;
             int cylA;
             Point3 pOrigin;
@@ -112,6 +112,14 @@ namespace _3D_KURS
                 Rotate rot = new Rotate(ObjList[i], int.Parse(tbRotX.Text), int.Parse(tbRotY.Text), int.Parse(tbRotZ.Text));
             }
 
+            if (isFill.Checked)
+            {
+                clear_panel();
+                Painter p = new Painter(gr, Zero, ObjList, isColor.Enabled && isColor.Checked, cbLight.Enabled && cbLight.Checked, 
+                    new Point3(int.Parse(tbLightX.Text),
+                             -int.Parse(tbLightY.Text),
+                             int.Parse(tbLightZ.Text)));
+            }
         }
 
         private void butMove_Click(object sender, EventArgs e)   // перемещение
@@ -122,6 +130,15 @@ namespace _3D_KURS
             {
                 Move move = new Move(ObjList[i], int.Parse(tbMoveX.Text), int.Parse(tbMoveY.Text), int.Parse(tbMoveZ.Text));
             }
+
+            if (isFill.Checked)
+            {
+                clear_panel();
+                Painter p = new Painter(gr, Zero, ObjList, isColor.Enabled && isColor.Checked, cbLight.Enabled && cbLight.Checked,
+                    new Point3(int.Parse(tbLightX.Text),
+                             -int.Parse(tbLightY.Text),
+                             int.Parse(tbLightZ.Text)));
+            }
         }
 
         private void butScale_Click(object sender, EventArgs e)  // масштабирование
@@ -131,6 +148,15 @@ namespace _3D_KURS
             for (int i = 0; i < ObjList.Count; i++)
             {
                 Scale scale = new Scale(ObjList[i], (float)tbScaleX.Value, (float)tbScaleY.Value, (float)tbScaleZ.Value);
+            }
+
+            if (isFill.Checked)
+            {
+                clear_panel();
+                Painter p = new Painter(gr, Zero, ObjList, isColor.Enabled && isColor.Checked, cbLight.Enabled && cbLight.Checked,
+                    new Point3(int.Parse(tbLightX.Text),
+                             -int.Parse(tbLightY.Text),
+                             int.Parse(tbLightZ.Text)));
             }
         }
 
@@ -179,6 +205,40 @@ namespace _3D_KURS
                     grPer.Show();
                     break;
             }
+        }
+
+        private void isFill_CheckedChanged(object sender, EventArgs e)
+        {
+            clear_panel();
+            Painter p = new Painter(gr, Zero, ObjList, isColor.Enabled && isColor.Checked, cbLight.Enabled && cbLight.Checked,
+                new Point3(int.Parse(tbLightX.Text),
+                             -int.Parse(tbLightY.Text),
+                             int.Parse(tbLightZ.Text)));
+
+            isColor.Enabled = isFill.Checked;
+            cbLight.Enabled = isColor.Enabled && isColor.Checked;
+        }
+
+        private void isColor_CheckedChanged(object sender, EventArgs e)
+        {
+            cbLight.Enabled = isColor.Checked;
+
+            clear_panel();
+            Painter p = new Painter(gr, Zero, ObjList, isColor.Checked, cbLight.Enabled && cbLight.Checked,
+                new Point3(int.Parse(tbLightX.Text),
+                             -int.Parse(tbLightY.Text),
+                             int.Parse(tbLightZ.Text)));
+        }
+
+        private void cbLight_CheckedChanged(object sender, EventArgs e)
+        {
+            grLight.Visible = cbLight.Checked;
+
+            clear_panel();
+            Painter p = new Painter(gr, Zero, ObjList, isColor.Checked, cbLight.Enabled && cbLight.Checked,
+                new Point3(int.Parse(tbLightX.Text),
+                             -int.Parse(tbLightY.Text),
+                             int.Parse(tbLightZ.Text)));
         }
 
     }

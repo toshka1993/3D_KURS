@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Drawing;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -35,6 +36,9 @@ namespace _3D_KURS
     class Facet
     {
         public List<Point3> Points;
+        public float avZ;
+        public Color color, colorFill;
+
         public Facet()
         {
             Points = new List<Point3>();

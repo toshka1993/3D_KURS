@@ -12,9 +12,10 @@ namespace _3D_KURS
     {
         public Point3[] points;               // точки фигуры
 
-        protected Point3[] pointsProj;        // точки проекции фигуры
+  //      protected Point3[] pointsProj;        // точки проекции фигуры
         protected Edge[] edges;               // ребра фигуры
-        protected Facet[] facets;             // грани фигуры
+        public Facet[] facets;             // грани фигуры
+  //      protected Facet[] facProj;             // грани фигуры проекции
         protected Projection proj;            //проекция
 
         private Graphics gr;                 // переменная графической панели
@@ -35,7 +36,6 @@ namespace _3D_KURS
 
         abstract protected void SetFacets();         // задание граней фигуры
 
-
         public void DrawFigure()                    // отрисовка фигуры по граням
         {
             foreach (Facet fat in facets)
@@ -49,10 +49,16 @@ namespace _3D_KURS
                 gr.DrawPolygon(new Pen(Color.Black, 1), lP.ToArray());
             }
         }
+
+        public void GetFigure()              // обновление фигуры
+        {
+            points = proj.CreateProjection(points);     // получение точек проекции фигуры
+
+            UpdateFigure();
+        }
+
         public void UpdateFigure()              // обновление фигуры
         {
-            pointsProj = proj.CreateProjection(points);     // получение точек проекции фигуры
-
             SetEdges();
             SetFacets();
             DrawFigure();
