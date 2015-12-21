@@ -74,20 +74,20 @@ namespace _3D_KURS
                     facets[i].avZ = 0;
                 }
 
-            facets[0].Points.Add(points[0]); facets[0].Points.Add(points[1]);
-            facets[0].Points.Add(points[2]); facets[0].Points.Add(points[3]);
+            facets[0].Points.Add(points[0]); facets[0].Points.Add(points[3]);
+            facets[0].Points.Add(points[2]); facets[0].Points.Add(points[1]);
             facets[0].avZ = (points[0].Z + points[1].Z + points[2].Z + points[3].Z) / 4;
 
-            facets[1].Points.Add(points[7]); facets[1].Points.Add(points[6]);
-            facets[1].Points.Add(points[5]); facets[1].Points.Add(points[4]);
+            facets[1].Points.Add(points[7]); facets[1].Points.Add(points[4]);
+            facets[1].Points.Add(points[5]); facets[1].Points.Add(points[6]);
             facets[1].avZ = (points[4].Z + points[5].Z + points[6].Z + points[7].Z) / 4;
 
             facets[2].Points.Add(points[0]); facets[2].Points.Add(points[4]);
             facets[2].Points.Add(points[5]); facets[2].Points.Add(points[1]);
             facets[2].avZ = (points[0].Z + points[1].Z + points[4].Z + points[5].Z) / 4;
 
-            facets[3].Points.Add(points[1]); facets[3].Points.Add(points[5]);
-            facets[3].Points.Add(points[6]); facets[3].Points.Add(points[2]);
+            facets[3].Points.Add(points[1]); facets[3].Points.Add(points[2]);
+            facets[3].Points.Add(points[6]); facets[3].Points.Add(points[5]);
             facets[3].avZ = (points[1].Z + points[2].Z + points[5].Z + points[6].Z) / 4;
 
             facets[4].Points.Add(points[3]); facets[4].Points.Add(points[2]);

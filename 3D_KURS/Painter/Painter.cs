@@ -137,22 +137,14 @@ namespace _3D_KURS
                    Math.Pow(Vis.Y, 2) +
                    Math.Pow(Vis.Z, 2));
 
-            if (normL == 0 || visL == 0)
-                ResVis = -1;
-            else
-            {
-                ResVis = (norm.X * Vis.X + norm.Y * Vis.Y + norm.Z * Vis.Z) / (normL * visL);
-            }
-            isVis = (ResVis > 0);
-
             if (isLight)
             {
                 visL = Math.Sqrt(Math.Pow(lightPoint.X, 2) +
                     Math.Pow(lightPoint.Y, 2) +
                     Math.Pow(lightPoint.Z, 2));
 
-                normL = normL == 0 ? 0.0001 : normL;
-                visL = visL == 0 ? 0.0001 : visL;
+           //     normL = normL == 0 ? 0.0001 : normL;
+           //     visL = visL == 0 ? 0.0001 : visL;
 
                 ResVis = (norm.X * lightPoint.X + norm.Y * lightPoint.Y + norm.Z * lightPoint.Z) / (normL * visL);
 
@@ -160,7 +152,6 @@ namespace _3D_KURS
                                        (int)(curGr.color.G * (0.5 + 0.5 * ResVis)),
                                        (int)(curGr.color.B * (0.5 + 0.5 * ResVis)));
             }
-          //  return isVis;
         }
     }
 }

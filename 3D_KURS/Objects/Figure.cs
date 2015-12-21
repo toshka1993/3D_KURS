@@ -11,11 +11,8 @@ namespace _3D_KURS
     abstract class Figure 
     {
         public Point3[] points;               // точки фигуры
-
-  //      protected Point3[] pointsProj;        // точки проекции фигуры
         protected Edge[] edges;               // ребра фигуры
-        public Facet[] facets;             // грани фигуры
-  //      protected Facet[] facProj;             // грани фигуры проекции
+        public Facet[] facets;                // грани фигуры
         protected Projection proj;            //проекция
 
         private Graphics gr;                 // переменная графической панели

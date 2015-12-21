@@ -108,7 +108,7 @@ namespace _3D_KURS
 
             facets[0].avZ = facets[0].avZ / A;
 
-            for (int i = A; i < A*2; i++)
+            for (int i = A * 2 - 1; i > A; i--)
             {
                 facets[1].Points.Add(points[i]); // верхнее основание
                 facets[1].avZ += points[i].Z;

@@ -241,5 +241,14 @@ namespace _3D_KURS
                              int.Parse(tbLightZ.Text)));
         }
 
+        private void butLight_Click(object sender, EventArgs e)
+        {
+            clear_panel();
+            Painter p = new Painter(gr, Zero, ObjList, isColor.Checked, cbLight.Enabled && cbLight.Checked,
+                new Point3(int.Parse(tbLightX.Text),
+                             -int.Parse(tbLightY.Text),
+                             int.Parse(tbLightZ.Text)));
+        }
+
     }
 }

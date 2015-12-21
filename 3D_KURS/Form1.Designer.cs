@@ -832,6 +832,7 @@
             this.butLight.TabIndex = 8;
             this.butLight.Text = "OK";
             this.butLight.UseVisualStyleBackColor = true;
+            this.butLight.Click += new System.EventHandler(this.butLight_Click);
             // 
             // tbLightX
             // 
