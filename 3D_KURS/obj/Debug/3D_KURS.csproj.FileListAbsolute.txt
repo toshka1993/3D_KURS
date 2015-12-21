@@ -52,3 +52,12 @@ D:\3D_KURS\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csprojResolveAssemblyReference.cach
 D:\3D_KURS\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.ModelForm.resources
 D:\3D_KURS\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.Properties.Resources.resources
 D:\3D_KURS\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csproj.GenerateResource.Cache
+E:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe.config
+E:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.exe
+E:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.pdb
+E:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.exe
+E:\3D_KURS\3D_KURS\bin\Debug\3D_KURS.pdb
+E:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csprojResolveAssemblyReference.cache
+E:\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.ModelForm.resources
+E:\3D_KURS\3D_KURS\obj\Debug\_3D_KURS.Properties.Resources.resources
+E:\3D_KURS\3D_KURS\obj\Debug\3D_KURS.csproj.GenerateResource.Cache

@@ -113,7 +113,6 @@ namespace _3D_KURS
             Point3 norm = new Point3(0, 0, 0);
             Point3 Vis = new Point3(0, 0, 0);
             double normL, visL, ResVis;
-            bool isVis;
 
             VecA.X = curGr.Points[1].X - curGr.Points[0].X;
             VecA.Y = curGr.Points[1].Y - curGr.Points[0].Y;

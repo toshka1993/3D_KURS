@@ -21,7 +21,7 @@ namespace _3D_KURS
         PointF Zero;
         List<Figure> ObjList;                                           // список фигур
 
-        private void create_model()                                     // метод построения модели
+        private void create_model(int i)                                     // метод построения модели
         {
 
             Parallelepiped Par;
@@ -51,7 +51,7 @@ namespace _3D_KURS
 
             clear_panel();
 
-            Projection proj = create_proj(cbProj.SelectedIndex);                // метод получения объекта нужной проекции (в зависимости от выбранной)
+            Projection proj = create_proj(i);                // метод получения объекта нужной проекции (в зависимости от выбранной)
 
             Par = new Parallelepiped(parL, parW, parH, gr, Zero, proj);         // создание параллелепипеда
             ObjList.Add(Par);                                                   // добавление объекта в список фигур
@@ -96,11 +96,12 @@ namespace _3D_KURS
 
         private void butDrawModel_Click(object sender, EventArgs e)
         {
-            create_model();
+            create_model(cbProj.SelectedIndex);
 
             grMove.Enabled = true;
             grScale.Enabled = true;
             grRotate.Enabled = true;
+            isFill.Enabled = true;
         }
 
         private void butRotate_Click(object sender, EventArgs e)     // поворот
@@ -178,31 +179,79 @@ namespace _3D_KURS
                     grAks.Hide();
                     grObl.Hide();
                     grPer.Hide();
+
+                    grMove.Show();
+                    grRotate.Show();
+                    grScale.Show();
+
+                    isFill.Show();
+                    isColor.Show();
+                    cbLight.Show();
                     break;
                 case 1:  //выбрана горизонтальная проекция -> скрыть все параметры проекций
                     grAks.Hide();
                     grObl.Hide();
                     grPer.Hide();
+
+                    grMove.Show();
+                    grRotate.Show();
+                    grScale.Show();
+
+                    isFill.Show();
+                    isColor.Show();
+                    cbLight.Show();
                     break;
                 case 2:  //выбрана профильная проекция -> скрыть все параметры проекций
                     grAks.Hide();
                     grObl.Hide();
                     grPer.Hide();
+
+                    grMove.Show();
+                    grRotate.Show();
+                    grScale.Show();
+
+                    isFill.Show();
+                    isColor.Show();
+                    cbLight.Show();
                     break;
                 case 3:  //выбрана аксонометрическая проекция -> показать для данной проекции параметры
                     grAks.Show();
                     grObl.Hide();
                     grPer.Hide();
+
+                    grMove.Hide();
+                    grRotate.Hide();
+                    grScale.Hide();
+
+                    isFill.Hide();
+                    isColor.Hide();
+                    cbLight.Hide();
                     break;
                 case 4: //выбрана косоугольная проекция -> показать для данной проекции параметры
                     grAks.Hide();
                     grObl.Show();
                     grPer.Hide();
+
+                    grMove.Hide();
+                    grRotate.Hide();
+                    grScale.Hide();
+
+                    isFill.Hide();
+                    isColor.Hide();
+                    cbLight.Hide();
                     break;
                 case 5: //выбрана перспективная проекция -> показать для данной проекции параметры
                     grAks.Hide();
                     grObl.Hide();
                     grPer.Show();
+
+                    grMove.Hide();
+                    grRotate.Hide();
+                    grScale.Hide();
+
+                    isFill.Hide();
+                    isColor.Hide();
+                    cbLight.Hide();
                     break;
             }
         }

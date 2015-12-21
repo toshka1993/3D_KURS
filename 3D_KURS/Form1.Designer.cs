@@ -787,6 +787,7 @@
             // isFill
             // 
             this.isFill.AutoSize = true;
+            this.isFill.Enabled = false;
             this.isFill.Location = new System.Drawing.Point(929, 12);
             this.isFill.Name = "isFill";
             this.isFill.Size = new System.Drawing.Size(163, 17);

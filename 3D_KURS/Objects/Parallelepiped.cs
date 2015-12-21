@@ -90,8 +90,8 @@ namespace _3D_KURS
             facets[3].Points.Add(points[6]); facets[3].Points.Add(points[5]);
             facets[3].avZ = (points[1].Z + points[2].Z + points[5].Z + points[6].Z) / 4;
 
-            facets[4].Points.Add(points[3]); facets[4].Points.Add(points[2]);
-            facets[4].Points.Add(points[6]); facets[4].Points.Add(points[7]);
+            facets[4].Points.Add(points[3]); facets[4].Points.Add(points[7]);
+            facets[4].Points.Add(points[6]); facets[4].Points.Add(points[2]);
             facets[4].avZ = (points[2].Z + points[3].Z + points[4].Z + points[7].Z) / 4;
 
             facets[5].Points.Add(points[0]); facets[5].Points.Add(points[3]);
