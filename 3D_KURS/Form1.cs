@@ -107,10 +107,28 @@ namespace _3D_KURS
         private void butRotate_Click(object sender, EventArgs e)     // поворот
         {
             clear_panel();
-
-            for (int i = 0; i < ObjList.Count; i++)
+            if (cbProj.SelectedIndex == 0)
             {
-                Rotate rot = new Rotate(ObjList[i], int.Parse(tbRotX.Text), int.Parse(tbRotY.Text), int.Parse(tbRotZ.Text));
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Rotate rot = new Rotate(ObjList[i], int.Parse(tbRotX.Text), int.Parse(tbRotY.Text), int.Parse(tbRotZ.Text));
+                }
+            }
+
+            if (cbProj.SelectedIndex == 1)
+            {
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Rotate rot = new Rotate(ObjList[i], int.Parse(tbRotX.Text), int.Parse(tbRotZ.Text), int.Parse(tbRotY.Text));
+                }
+            }
+
+            if (cbProj.SelectedIndex == 2)
+            {
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Rotate rot = new Rotate(ObjList[i], int.Parse(tbRotZ.Text), int.Parse(tbRotY.Text), int.Parse(tbRotX.Text));
+                }
             }
 
             if (isFill.Checked)
@@ -126,12 +144,29 @@ namespace _3D_KURS
         private void butMove_Click(object sender, EventArgs e)   // перемещение
         {
             clear_panel();
-
-            for (int i = 0; i < ObjList.Count; i++)
+            if (cbProj.SelectedIndex == 0)
             {
-                Move move = new Move(ObjList[i], int.Parse(tbMoveX.Text), int.Parse(tbMoveY.Text), int.Parse(tbMoveZ.Text));
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Move move = new Move(ObjList[i], int.Parse(tbMoveX.Text), int.Parse(tbMoveY.Text), int.Parse(tbMoveZ.Text));
+                }
             }
 
+            if (cbProj.SelectedIndex == 1)
+            {
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Move move = new Move(ObjList[i], int.Parse(tbMoveX.Text), int.Parse(tbMoveZ.Text), int.Parse(tbMoveY.Text));
+                }
+            }
+
+            if (cbProj.SelectedIndex == 2)
+            {
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Move move = new Move(ObjList[i], int.Parse(tbMoveY.Text), int.Parse(tbMoveZ.Text), int.Parse(tbMoveX.Text));
+                }
+            }
             if (isFill.Checked)
             {
                 clear_panel();
@@ -146,9 +181,28 @@ namespace _3D_KURS
         {
             clear_panel();
 
-            for (int i = 0; i < ObjList.Count; i++)
+            if (cbProj.SelectedIndex == 0)
             {
-                Scale scale = new Scale(ObjList[i], (float)tbScaleX.Value, (float)tbScaleY.Value, (float)tbScaleZ.Value);
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Scale scale = new Scale(ObjList[i], (float)tbScaleX.Value, (float)tbScaleY.Value, (float)tbScaleZ.Value);
+                }
+            }
+
+            if (cbProj.SelectedIndex == 1)
+            {
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Scale scale = new Scale(ObjList[i], (float)tbScaleX.Value, (float)tbScaleZ.Value, (float)tbScaleY.Value);
+                }
+            }
+
+            if (cbProj.SelectedIndex == 2)
+            {
+                for (int i = 0; i < ObjList.Count; i++)
+                {
+                    Scale scale = new Scale(ObjList[i], (float)tbScaleZ.Value, (float)tbScaleY.Value, (float)tbScaleX.Value);
+                }
             }
 
             if (isFill.Checked)
